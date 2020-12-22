@@ -16,7 +16,7 @@
         success: function(authObj) {
             // console.log( authObj );
             Kakao.API.request({
-              url: "/v1/user/me",
+              url: "/v2/user/me",
               success: function(res) {
                 // console.log( res );
                 // @breif 아이디
@@ -27,7 +27,7 @@
                 document.getElementById("kakaoProfileImg").src = res.properties.profile_image;
                 // @breif 썸네일 이미지
                 document.getElementById("kakaoThumbnailImg").src = res.properties.thumbnail_image;
-                alert("로그인 기능 성공")
+                alert("로그인 완료")
                 console.log(res)
               },
               fail: function(error) {
