@@ -6,13 +6,13 @@ module.exports = (passport) => {
         console.log(user);
         done(null, user.id);
     });
-    
+
     passport.deserializeUser((id, done) => {
         console.log("passport deserializeUser");
         User.findOne({ where: { id }
-            
+
         }).then(user => done(null, user)).catch(err => done(err));
     });
-    
+
     kakao(passport);
 };
