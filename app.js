@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+var session = require('express-session');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -8,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var oauthRouter = require('./routes/oauth');
+const dotenv = require('dotenv').config();
 var passportConfig = require('./passport');
 
 passportConfig(passport);
@@ -32,6 +34,7 @@ app.use('/oauth', oauthRouter);
 app.use(session({
     resave: false,
     saveUninitialized:false,
+    secret: process.env.COOKIE_SECRET,
     cookie:{
         httpOnly: true,
         secure: false,

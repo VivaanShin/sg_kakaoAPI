@@ -1,8 +1,6 @@
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();
-const request = require('request-promise-native');
-const req_module = require('./req_kakao');
 const url = require('url');
 
 //routes/oauth/kakao

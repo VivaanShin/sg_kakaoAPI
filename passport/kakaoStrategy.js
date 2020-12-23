@@ -3,8 +3,8 @@ const KakaoStrategy = require('passport-kakao').Strategy
 
 module.exports=(passport)=>{
     passport.use(new KakaoStrategy({
-    clientID : 'cdb9619875c94bd69dd7754a6d303642',
-    callbackURL : "https://yj-kakao-api.run.goorm.io/oauth/callback"
+    clientID : process.env.KAKAO_ID,
+    callbackURL : "./kakao/callback"
   }, async (accessToken, refreshToken, profile, done) => {
     // 사용자의 정보는 profile에 들어있다.
     try {
