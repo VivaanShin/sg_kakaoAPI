@@ -1,4 +1,6 @@
 const kakao = require('./kakaoStrategy');
+var session = require('express-session');
+var flash = require('connect-flash');
 
 module.exports = (passport) => {
     passport.serializeUser((user, done) => {

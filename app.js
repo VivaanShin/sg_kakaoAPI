@@ -11,6 +11,7 @@ var loginRouter = require('./routes/login');
 var oauthRouter = require('./routes/oauth');
 const dotenv = require('dotenv').config();
 var passportConfig = require('./passport');
+var flash = require('flash');
 
 passportConfig(passport);
 
@@ -43,6 +44,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 
 // catch 404 and forward to error handler

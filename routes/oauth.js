@@ -1,5 +1,7 @@
 var express = require('express');
 var passport = require('passport');
+var session = require('express-session');
+var flash = require('connect-flash');
 var router = express.Router();
 const url = require('url');
 
@@ -11,6 +13,7 @@ router.get('/kakao', passport.authenticate('kakao'));
 router.get('/kakao/callback', passport.authenticate('kakao', {
     failureRedirect: '/',
 }), (req, res) => {
+    console.log("login success");
     res.redirect('/');
 });
 
