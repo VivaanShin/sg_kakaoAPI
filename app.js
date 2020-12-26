@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var oauthRouter = require('./routes/oauth');
 var channelRouter = require('./routes/channel');
+var socialRouter = require('./routes/social');
 const dotenv = require('dotenv').config();
 var passportConfig = require('./passport');
 var flash = require('flash');
@@ -33,6 +34,7 @@ app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/oauth', oauthRouter);
 app.use('/channel', channelRouter);
+app.use('/social', socialRouter);
 
 app.use(session({
     resave: false,
