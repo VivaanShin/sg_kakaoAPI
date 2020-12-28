@@ -10,13 +10,14 @@ var resultData = {};
 /* GET home page. */
 router.get('/kakao', async function(req, res, next) {
     API_Call.login(function(err, result){
-        console.log("result: ", result);
+        console.log(result)
     })
   
 });
 
 router.get('/kakao/callback', function(req, res, next) {
-    console.log(req.body)
+    console.log("/kauth/kakao/callback in")
+    console.log(res.query.code)
 });
 
 

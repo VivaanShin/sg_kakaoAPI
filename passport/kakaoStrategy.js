@@ -10,13 +10,11 @@ module.exports=(passport)=>{
     clientID : process.env.KAKAO_ID,
     callbackURL : "https://yj-kakao-api.run.goorm.io/oauth/kakao/callback"
   }, async (accessToken, refreshToken, profile, done) => {
-            console.log("여긴 되나")
             try{
-                console.log("뭐가문제야",accessToken, refreshToken, profile)
+                console.log(accessToken, refreshToken, profile)
                 done(null, accessToken, profile);
                 
             } catch(error){
-                console.log("여기에러");
                 console.error(error);
                 done(error);
         } 

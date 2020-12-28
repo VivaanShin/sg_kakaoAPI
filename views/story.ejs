@@ -10,8 +10,24 @@
 </head>
 
 <body>
-  <div>사용자 확인하기 : </div>
+    <div>사용자 확인하기 : <%= check %></div>
+    <div class="tsh" style="padding-top:7.5%">
+        <form name="get_story_profile" method="get" action="/story/get_profile">
 
+              <p>
+                  사용자 확인이 true일 경우에만 아래 버튼을 눌러주세요!
+            </p>
+            <p>
+                  false일 경우 메인화면으로 돌아갑니다!
+            </p>
+            <button type="submit">카카오스토리 프로필 가져오기</button>
+          
+        </form>
+
+      </div>
+    
+    
+    
 </body>
 
 </html>

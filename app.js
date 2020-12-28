@@ -33,6 +33,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+    resave: false,
+    saveUninitialized:false,
+    secret: process.env.COOKIE_SECRET,
+    cookie:{
+        httpOnly: true,
+        secure: false,
+    },
+}));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
@@ -44,15 +54,7 @@ app.use('/channel', channelRouter);
 app.use('/social', socialRouter);
 app.use('/story', storyRouter);
 
-app.use(session({
-    resave: false,
-    saveUninitialized:false,
-    secret: process.env.COOKIE_SECRET,
-    cookie:{
-        httpOnly: true,
-        secure: false,
-    },
-}));
+
 
 app.use(passport.initialize());
 app.use(passport.session());
