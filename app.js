@@ -8,9 +8,13 @@ var passport = require('passport');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
+var logoutRouter = require('./routes/logout');
+var unlinkRouter = require('./routes/unlink');
 var oauthRouter = require('./routes/oauth');
+var kauthRouter = require('./routes/kauth');
 var channelRouter = require('./routes/channel');
 var socialRouter = require('./routes/social');
+var storyRouter = require('./routes/story');
 const dotenv = require('dotenv').config();
 var passportConfig = require('./passport');
 var flash = require('flash');
@@ -32,9 +36,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
+app.use('/unlink', unlinkRouter);
 app.use('/oauth', oauthRouter);
+app.use('/kauth', kauthRouter);
 app.use('/channel', channelRouter);
 app.use('/social', socialRouter);
+app.use('/story', storyRouter);
 
 app.use(session({
     resave: false,

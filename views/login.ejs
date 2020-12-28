@@ -59,7 +59,14 @@
         }
       });
     });
+    function kakaoLogout() {
+		Kakao.Auth.logout(function(response) {
+			alert(response + 'logout');
+		}); 
+    }  
+      
   </script>
+    
 </head>
 
 <body>
@@ -93,6 +100,8 @@
   <br />
 
   <a id="kakao-login-btn"></a>
+
+    <a onclick="kakaoLogout();">카카오 로그아웃</a>
 
 </body>
 

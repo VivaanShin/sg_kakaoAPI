@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script type="text/javascript">
+   Kakao.init("c242298ca638ef9255d40916e81a9b03");
+    function kakaoLogout() {
+		Kakao.Auth.logout(function(response) {
+			alert(response + 'logout');
+		}); 
+    }
+  </script>
+</head>
+
+<body>
+    <a onclick="kakaoLogout();">카카오 로그아웃</a>
+</body>
+
+</html>

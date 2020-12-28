@@ -6,17 +6,17 @@ const KakaoStrategy = require('passport-kakao').Strategy
 module.exports=(passport)=>{
     passport.use(
         //이 부분 추가한 것
-        'kakao',
         new KakaoStrategy({
     clientID : process.env.KAKAO_ID,
     callbackURL : "https://yj-kakao-api.run.goorm.io/oauth/kakao/callback"
   }, async (accessToken, refreshToken, profile, done) => {
-            
+            console.log("여긴 되나")
             try{
-                console.log(accessToken, refreshToken, profile)
-                done(null);
+                console.log("뭐가문제야",accessToken, refreshToken, profile)
+                done(null, accessToken, profile);
                 
             } catch(error){
+                console.log("여기에러");
                 console.error(error);
                 done(error);
         } 
@@ -27,7 +27,7 @@ module.exports=(passport)=>{
         if (exUser) {
             done(null, exUser);
         } else {
-            const newUser = await User.create({
+            const newUser = zawait User.create({
                 email: profile._json && profile._json.kaccount_email,
                 nick: profile.displayName,
                 snsId: profile.id,

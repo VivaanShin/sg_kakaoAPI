@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script type="text/javascript">
+   Kakao.init("c242298ca638ef9255d40916e81a9b03");
+    // 로그인 성공시, API를 호출합니다.
+     Kakao.API.request({
+      url: '/v1/user/unlink',
+      success: function(res) {
+       console.log(res);
+       document.getElementById("res").innerHTML = res;
+      
+      },
+      fail: function(error) {
+          alert("이미 연결이 끊겨있습니다.")
+       alert(JSON.stringify(error));
+      }
+     });
+  </script>
+</head>
+
+<body>
+    <div>응답 : <span id="res"></span></div>
+</body>
+
+</html>
