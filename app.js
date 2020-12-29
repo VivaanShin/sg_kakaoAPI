@@ -15,6 +15,8 @@ var kauthRouter = require('./routes/kauth');
 var channelRouter = require('./routes/channel');
 var socialRouter = require('./routes/social');
 var storyRouter = require('./routes/story');
+var searchRouter = require('./routes/search');
+var translationRouter = require('./routes/translation');
 const dotenv = require('dotenv').config();
 var passportConfig = require('./passport');
 var flash = require('flash');
@@ -53,6 +55,8 @@ app.use('/kauth', kauthRouter);
 app.use('/channel', channelRouter);
 app.use('/social', socialRouter);
 app.use('/story', storyRouter);
+app.use('/search', searchRouter);
+app.use('/translation', translationRouter);
 
 
 

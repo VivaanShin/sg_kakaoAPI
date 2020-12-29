@@ -72,7 +72,7 @@ exports.write_text=function(token, content, callback){
                       'Authorization': 'Bearer ' + token
                      },
             
-            body: {
+            form: {
                 "content": content
             }
             

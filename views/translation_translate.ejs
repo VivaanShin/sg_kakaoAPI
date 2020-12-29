@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  
+    
+</head>
+
+<body>
+
+    <div class="tsh" style="padding-top:7.5%">
+        <form name="post_traslate" method="post" action="/translation/translate">
+            
+            <h2>
+                1. 번역을 요청할 문장을 입력해주세요. (최대 5,000자) 
+            </h2><br>
+            <input type="text" name="query" value="" style="width:500px;height:200px;font-size:10px;"><br>
+            <h2>
+                2. 번역 대상 언어(하단 코드 입력)
+            </h2>
+            <input type="text" name="src_lang" value=""><br>
+            <h2>
+                3. 번역 결과 언어(하단 코드 입력)
+            </h2>
+            <input type="text" name="target_lang" value=""><br><br>
+            <button type="submit">번역하기</button>
+            <button type="reset">내용 리셋하기</button>
+            <br><br><br>
+            <table border="1">
+                <thead align = "center">
+                    <tr>
+                        <th>언어</th>
+                        <th>코드</th>
+                    </tr>               
+                </thead>
+                <tbody align = "center">
+                    <tr>
+                        <td>한국어</td>
+                        <td>kr</td>
+                    </tr>
+                    <tr>
+                        <td>영어</td>
+                        <td>en</td>
+                    </tr>
+                    <tr>
+                        <td>일본어</td>
+                        <td>jp</td>
+                    </tr>
+                    <tr>
+                        <td>중국어</td>
+                        <td>cn</td>
+                    </tr>
+                    <tr>
+                        <td>베트남어</td>
+                        <td>vi</td>
+                    </tr>
+                    <tr>
+                        <td>인도네시아어</td>
+                        <td>id</td>
+                    </tr>
+                    <tr>
+                        <td>아랍어</td>
+                        <td>ar</td>
+                    </tr>
+                    <tr>
+                        <td>뱅갈어</td>
+                        <td>bn</td>
+                    </tr>
+                    <tr>
+                        <td>독일어</td>
+                        <td>de</td>
+                    </tr>
+                    <tr>
+                        <td>스페인어</td>
+                        <td>es</td>
+                    </tr>
+                    <tr>
+                        <td>프랑스어</td>
+                        <td>fr</td>
+                    </tr>
+                    <tr>
+                        <td>힌디어</td>
+                        <td>hi</td>
+                    </tr>
+                    <tr>
+                        <td>이탈리아어</td>
+                        <td>it</td>
+                    </tr>
+                    <tr>
+                        <td>말레이시아어</td>
+                        <td>ms</td>
+                    </tr>
+                    <tr>
+                        <td>네덜란드어</td>
+                        <td>nl</td>
+                    </tr>
+                    <tr>
+                        <td>포르투갈어</td>
+                        <td>pt</td>
+                    </tr>
+                    <tr>
+                        <td>러시아어</td>
+                        <td>ru</td>
+                    </tr>
+                    <tr>
+                        <td>태국어</td>
+                        <td>th</td>
+                    </tr>
+                    <tr>
+                        <td>터키어</td>
+                        <td>tr</td>
+                    </tr>
+                
+                </tbody>
+                
+            </table>
+            
+            
+          
+        </form>
+
+      </div>
+    
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  
+    
+</head>
+
+<body>
+
+    <div class="tsh" style="padding-top:7.5%">
+        <form name="post_language_detect" method="post" action="/translation/language_detect">
+            <h1>
+                입력된 텍스트의 언어를 감지하는 API 입니다.
+            </h1>
+            <h2>
+                언어 감지를 요청할 문장을 입력해주세요. (최대 5,000자) 
+            </h2><br>
+            <input type="text" name="query" value="" style="width:500px;height:200px;font-size:10px;"><br><br><br>
+            
+            <button type="submit">감지하기</button>
+            <button type="reset">내용 리셋하기</button>
+            <br><br><br>
+            
+        </form>
+
+      </div>
+    
+    
+    
+</body>
+
+</html>

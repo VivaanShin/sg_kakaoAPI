@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  
+    
+</head>
+
+<body>
+        <div>검색된 문서 수 : <%= meta.total_count %></div>
+        <div>노출 가능 문서 수 : <%= meta.pageable_count %></div>
+        <div>현재 페이지가 마지막 페이지인가요? : <%= meta.is_end %></div>
+    
+        <h2>
+            요청하신 '<%= query %>' 검색 결과를 보여드리겠습니다.
+    </h2>
+        <% for(var i=0; i<documents.length; i++){ %>
+            <div>도서 출판날짜 : <%= documents[i].datetime %></div>
+            <div>도서 제목 : <%= documents[i].title %></div>
+            <div>도서 소개 : <%= documents[i].contents %></div>
+            <div>도서 상세 URL  : <%= documents[i].url %></div>
+            <div>국제 표준 도서번호(isbn) : <%= documents[i].isbn %></div>
+            <div>도서 표지 미리보기 이미지 : <%= documents[i].thumbnail %></div>
+            <div>도서 저자 리스트 : <%= documents[i].authors %></div>
+            <div>도서 출판사 : <%= documents[i].publisher %></div>
+            <div>도서 번역자 리스트 : <%= documents[i].translators %></div>
+            <div>도서 정가 : <%= documents[i].price %></div>
+            <div>도서 판매가 : <%= documents[i].sale_price %></div>
+            
+            
+            <br>
+            
+    <% } %>
+    
+    
+        
+    
+    
+</body>
+
+</html>

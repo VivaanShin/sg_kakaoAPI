@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  
+    
+</head>
+
+<body>
+        <div>검색된 문서 수 : <%= meta.total_count %></div>
+        <div>노출 가능 문서 수 : <%= meta.pageable_count %></div>
+        <div>현재 페이지가 마지막 페이지인가요? : <%= meta.is_end %></div>
+    
+        <h2>
+            요청하신 '<%= query %>' 검색 결과를 보여드리겠습니다.
+    </h2>
+        <% for(var i=0; i<documents.length; i++){ %>
+            <div>카페 글 작성시간 : <%= documents[i].datetime %></div>
+            <div>카페 글 제목 : <%= documents[i].title %></div>
+            <div>카페 글 내용중 일부 : <%= documents[i].contents %></div>
+            <div>카페 글 URL  : <%= documents[i].url %></div>
+            <div>카페 이름 : <%= documents[i].cafename %></div>
+            <div>카페 글 대표 미리보기 이미지 : <%= documents[i].thumbnail %></div>
+            
+            
+            <br>
+            
+    <% } %>
+    
+    
+        
+    
+    
+</body>
+
+</html>

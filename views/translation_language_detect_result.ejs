@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  
+    
+</head>
+
+<body>
+
+    <h2>
+            언어 감지 결과를 보여드리겠습니다.
+    </h2>
+    <br>
+        <% for(var i=0; i<language_info.length; i++){ %>
+        <div>감지된 언어 : <%= language_info[i].name %></div>
+        <div>감지된 언어 코드 : <%= language_info[i].code %></div>
+        <div>감지된 결과의 신뢰도 : <%= language_info[i].confidence %></div>
+            <br>
+            
+        <% } %>
+    
+    
+    
+    
+        
+    
+    
+</body>
+
+</html>
