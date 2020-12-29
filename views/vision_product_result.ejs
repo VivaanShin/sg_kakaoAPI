@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+ 
+</head>
+
+<body>
+        
+    <h2>
+            요청하신 상품 검출하기 결과를 보여드리겠습니다.
+        </h2>
+    
+        <div>요청에 대한 ID값 : <%= rid %></div>
+        <div>요청 이미지의 가로 길이 : <%= result.width %></div>
+        <div>요청 이미지의 세로 길이 : <%= result.height %></div><br><br>
+    
+        
+        <% for(var i=0; i<result.objects.length; i++){ %>
+            <div>상품 검출 정보</div>
+            <div>상품의 이름 : <%= result.objects[i].class %></div>
+            <div>상품영역 좌상단 x좌표 : <%= result.objects[i].x1 %></div>
+            <div>상품영역 좌상단 y좌표 : <%= result.objects[i].y1 %></div>
+            <div>상품영역 우하단 x좌표 : <%= result.objects[i].x2 %></div>
+            <div>상품영역 우하단 y좌표 : <%= result.objects[i].y2 %></div>
+            
+            
+            
+        <% } %>
+    
+        
+    
+    
+        
+    
+    
+</body>
+
+</html>

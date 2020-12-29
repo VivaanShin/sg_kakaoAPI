@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+ 
+</head>
+
+<body>
+        
+    <h2>
+            요청하신 얼굴 검출하기 결과를 보여드리겠습니다.
+        </h2>
+    
+        <div>요청에 대한 ID값 : <%= rid %></div>
+        <div>요청 이미지의 가로 길이 : <%= result.width %></div>
+        <div>요청 이미지의 세로 길이 : <%= result.height %></div><br><br>
+    
+        
+        <% for(var i=0; i<result.faces.length; i++){ %>
+            <div>얼굴 검출 정보</div>
+            <div>남성 추정값 : <%= result.faces[i].facial_attributes.gender.male %></div>
+            <div>여성 추정값 : <%= result.faces[i].facial_attributes.gender.female %></div>
+            <div>추정 나이 : <%= result.faces[i].facial_attributes.age %></div>
+            <div>얼굴의 판별 점수 : <%= result.faces[i].score %></div>
+            <div>얼굴의 x좌표 : <%= result.faces[i].x %></div>
+            <div>얼굴의 y좌표 : <%= result.faces[i].y %></div>
+            <div>얼굴의 가로 길이(이미지 가로 길이 비례) : <%= result.faces[i].w %></div>
+            <div>얼굴의 세로 길이(이미지 세로 길이 비례) : <%= result.faces[i].h %></div>
+            <div>얼굴의 x축 각도(얼굴의 상하 움직임 각도) : <%= result.faces[i].pitch %></div>
+            <div>얼굴의 y축 각도(얼굴의 좌우 움직임 각도) : <%= result.faces[i].yaw %></div>
+            <div>얼굴의 z축 각도(얼굴의 회전 각도)) : <%= result.faces[i].roll %></div>
+            <div>턱선의 17개 좌표 배열 : <%= result.faces[i].facial_points.jaw %></div>
+            <div>오른쪽 눈썹의 5개의 좌표 배열 : <%= result.faces[i].facial_points.right_eyebrow %></div>
+            <div>왼쪽 눈썹의 5개의 좌표 배열 : <%= result.faces[i].facial_points.left_eyebrow %></div>
+            <div>코의 9개의 좌표 배열 : <%= result.faces[i].facial_points.nose %></div>
+            <div>오른쪽 눈의 6개의 좌표 배열 : <%= result.faces[i].facial_points.right_eye %></div>
+            <div>왼쪽 눈의 6개의 좌표 배열 : <%= result.faces[i].facial_points.left_eye %></div>
+            <div>입술의 20개의 좌표 배열 : <%= result.faces[i].facial_points.lip %></div>
+            <br>
+            
+        <% } %>
+    
+        
+    
+    
+        
+    
+    
+</body>
+
+</html>

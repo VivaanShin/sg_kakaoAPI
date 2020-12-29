@@ -11,14 +11,14 @@
 
 <body>
     <h1>
-        얼굴 검출하기 API 입니다.
+        상품 검출하기 API 입니다.
     </h1><br>
     
     <div class="tsh" style="padding-top:7.5%">
-        <form name="get_story_profile" method="post" action="/vision/face/image_url">
+        <form method="post" action="/vision/product/image_url">
             1. 이미지 URL로 요청하기
             이미지 URL을 입력해주세요 :  <input type="text" name="image_url" value=""><br>
-            <button type="submit">얼굴 검출하기</button>
+            <button type="submit">상품 검출하기</button>
             <button type="reset">내용 리셋하기</button>
           
         </form>
@@ -28,7 +28,7 @@
 
 
 <h3>Single File Upload (Keep Original Filename)</h3>
-<form action="/vision/face/image/uploadFilesWithOriginalFilename" enctype="multipart/form-data" method="post">
+<form action="/vision/product/image/uploadFilesWithOriginalFilename" enctype="multipart/form-data" method="post">
   <input type="file" name="attachment">
   <button type="submit" class="btn btn-primary">Upload</button>
 </form>

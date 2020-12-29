@@ -5,7 +5,10 @@ var flash = require('connect-flash');
 var router = express.Router();
 var multer = require('multer')
 var face_image_url = require('../request_modules/req_vision').face_image_url;
-var product = require('../request_modules/req_vision').product;
+var face_image = require('../request_modules/req_vision').face_image;
+var product_image_url = require('../request_modules/req_vision').product_image_url;
+var adult_image_url = require('../request_modules/req_vision').adult_image_url;
+var thumbnailCrop_image_url = require('../request_modules/req_vision').thumbnailCrop_image_url;
 
 var resultData = {};
 var storage = multer.memoryStorage();
@@ -42,21 +45,32 @@ router.post('/uploadFilesWithOriginalFilename', uploadWithOriginalFilename.array
 //routes/vision/face
 router.get('/face', async function(req, res, next) {
     
-    res.render('vision');
+    res.render('vision_face');
 });
 
 
-//routes/vision/face
+//routes/vision/face/image_url
 router.post('/face/image_url', async function(req, res, next) {
     var image_url = req.body.image_url;
-    console.log("image_url: ", image_url, "type image_url: ", typeof(image_url));
-    
     resultData = await face_image_url(image_url);
-    console.log(resultData);
     if(resultData != null){   
-        res.render('vision', resultData);
+        res.render('vision_face_result', resultData);
     }else{
-        res.redirect('vision');
+        res.redirect('vision_face');
+    }
+    
+});
+
+//routes/vision/face/image
+router.post('/face/image/uploadFilesWithOriginalFilename', uploadWithOriginalFilename.single('attachment'), async function(req, res, next) {
+    console.log('face image in');
+    console.log(req.file);
+    var image = req.file
+    resultData = await face_image();
+    if(resultData != null){   
+        res.render('vision_face_result', resultData);
+    }else{
+        res.redirect('vision_face');
     }
     
 });
@@ -64,22 +78,57 @@ router.post('/face/image_url', async function(req, res, next) {
 //routes/vision/product
 router.get('/product', async function(req, res, next) {
     
-    res.render('vision');
+    res.render('vision_product');
 });
 
 
-//routes/vision/product
-router.post('/product', async function(req, res, next) {
-    var query = req.body.query;
-    console.log("query: ", query, "type query: ", typeof(query));
-    
-    resultData = await language_detect(query);
-    resultData.query = query;
-    console.log(resultData, "resultData type", typeof(resultData));
+//routes/vision/product/image_url
+router.post('/product/image_url', async function(req, res, next) {
+    var image_url = req.body.image_url;
+    resultData = await product_image_url(image_url);
     if(resultData != null){   
-        res.render('vision', resultData);
+        res.render('vision_product_result', resultData);
     }else{
-        res.redirect('vision');
+        res.redirect('vision_product');
+    }
+    
+});
+
+
+//routes/vision/adult
+router.get('/adult', async function(req, res, next) {
+    
+    res.render('vision_adult');
+});
+
+
+//routes/vision/adult/image_url
+router.post('/adult/image_url', async function(req, res, next) {
+    var image_url = req.body.image_url;
+    resultData = await adult_image_url(image_url);
+    if(resultData != null){   
+        res.render('vision_adult_result', resultData);
+    }else{
+        res.redirect('vision_adult');
+    }
+    
+});
+
+//routes/vision/thumbnailCrop
+router.get('/thumbnailCrop', async function(req, res, next) {
+    
+    res.render('vision_thumbnailCrop');
+});
+
+
+//routes/vision/thumbnailCrop/image_url
+router.post('/thumbnailCrop/image_url', async function(req, res, next) {
+    var image_url = req.body.image_url;
+    resultData = await thumbnailCrop_image_url(image_url);
+    if(resultData != null){   
+        res.render('vision_thumbnailCrop_result', resultData);
+    }else{
+        res.redirect('vision_thumbnailCrop');
     }
     
 });

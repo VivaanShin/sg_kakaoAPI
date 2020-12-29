@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+ 
+</head>
+
+<body>
+        
+    <h2>
+            요청하신 성인 이미지 판별 결과를 보여드리겠습니다.
+        </h2>
+    
+        <div>요청에 대한 ID값 : <%= rid %></div>
+        <div>이미지가 정상일 확률 : <%= result.normal %></div>
+        <div>약간의 노출이 있을 확률(주로 수영복 사진일 경우 해당) : <%= result.soft %></div>
+        <div>노출이 많은 성인 이미지일 확률(주로 음란물일 경우 해당) : <%= result.adult %></div><br><br>
+    
+
+</body>
+
+</html>
