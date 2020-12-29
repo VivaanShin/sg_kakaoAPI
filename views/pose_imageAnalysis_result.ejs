@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+ 
+</head>
+
+<body>
+        
+    <h2>
+            요청하신 이미지 분석 결과를 보여드리겠습니다.
+        </h2>
+        <% for(var i=0; i<result.length; i++){ %>
+        <div>키 포인트를 모두 포함하는 바운딩 박스의 넓이 : <%= result[i].area %></div>
+        <div>키 포인트 중 가장 위쪽에 있는 키 포인트의 좌표와 바운딩 박스의 너비와 높이 : <%= result[i].bbox %></div>
+        <div>카테고리 ID(1로 고정) : <%= result[i].category_id %></div>
+        <div>17가지 키 포인트 : <%= result[i].keypoints %></div>
+        <div>키 포인트 데이터에 대한 신뢰도 : <%= result[i].score %></div><br><br>
+         <% } %>
+    
+</body>
+
+</html>

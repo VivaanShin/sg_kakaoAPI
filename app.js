@@ -19,6 +19,7 @@ var searchRouter = require('./routes/search');
 var translationRouter = require('./routes/translation');
 var visionRouter = require('./routes/vision');
 var multerRouter = require('./routes/multer');
+var poseRouter = require('./routes/pose');
 const dotenv = require('dotenv').config();
 var passportConfig = require('./passport');
 var flash = require('flash');
@@ -61,6 +62,7 @@ app.use('/search', searchRouter);
 app.use('/translation', translationRouter);
 app.use('/vision', visionRouter);
 app.use('/multer', multerRouter);
+app.use('/pose', poseRouter);
 
 
 
