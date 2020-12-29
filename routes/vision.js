@@ -8,7 +8,7 @@ var face_image_url = require('../request_modules/req_vision').face_image_url;
 var product = require('../request_modules/req_vision').product;
 
 var resultData = {};
-var storage = multer.momoryStorage();
+var storage = multer.memoryStorage();
 var upload = multer({ storage: storage }); // 3-1
 var uploadWithOriginalFilename = multer({ storage: storage }); // 3-2
 
