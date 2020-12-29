@@ -17,6 +17,8 @@ var socialRouter = require('./routes/social');
 var storyRouter = require('./routes/story');
 var searchRouter = require('./routes/search');
 var translationRouter = require('./routes/translation');
+var visionRouter = require('./routes/vision');
+var multerRouter = require('./routes/multer');
 const dotenv = require('dotenv').config();
 var passportConfig = require('./passport');
 var flash = require('flash');
@@ -57,6 +59,8 @@ app.use('/social', socialRouter);
 app.use('/story', storyRouter);
 app.use('/search', searchRouter);
 app.use('/translation', translationRouter);
+app.use('/vision', visionRouter);
+app.use('/multer', multerRouter);
 
 
 
