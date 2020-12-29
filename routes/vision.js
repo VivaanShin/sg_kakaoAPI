@@ -9,6 +9,8 @@ var face_image = require('../request_modules/req_vision').face_image;
 var product_image_url = require('../request_modules/req_vision').product_image_url;
 var adult_image_url = require('../request_modules/req_vision').adult_image_url;
 var thumbnailCrop_image_url = require('../request_modules/req_vision').thumbnailCrop_image_url;
+var thumbnailDetect_image_url = require('../request_modules/req_vision').thumbnailDetect_image_url;
+var multitag_image_url = require('../request_modules/req_vision').multitag_image_url;
 
 var resultData = {};
 var storage = multer.memoryStorage();
@@ -133,6 +135,43 @@ router.post('/thumbnailCrop/image_url', async function(req, res, next) {
     
 });
 
+//routes/vision/thumbnailDetect
+router.get('/thumbnailDetect', async function(req, res, next) {
+    
+    res.render('vision_thumbnailDetect');
+});
+
+
+//routes/vision/thumbnailDetect/image_url
+router.post('/thumbnailDetect/image_url', async function(req, res, next) {
+    var image_url = req.body.image_url;
+    resultData = await thumbnailDetect_image_url(image_url);
+    if(resultData != null){   
+        res.render('vision_thumbnailDetect_result', resultData);
+    }else{
+        res.redirect('vision_thumbnailDetect');
+    }
+    
+});
+
+//routes/vision/multitag
+router.get('/multitag', async function(req, res, next) {
+    
+    res.render('vision_multitag');
+});
+
+
+//routes/vision/multitag/image_url
+router.post('/multitag/image_url', async function(req, res, next) {
+    var image_url = req.body.image_url;
+    resultData = await multitag_image_url(image_url);
+    if(resultData != null){   
+        res.render('vision_multitag_result', resultData);
+    }else{
+        res.redirect('vision_multitag');
+    }
+    
+});
 
 
 module.exports = router;

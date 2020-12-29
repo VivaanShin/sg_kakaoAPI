@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+ 
+</head>
+
+<body>
+        
+    <h2>
+            요청하신 썸네일 검출 결과를 보여드리겠습니다.
+        </h2>
+    
+        <div>요청에 대한 ID값 : <%= rid %></div>
+        <div>요청 이미지의 가로 길이 : <%= result.width %></div>
+        <div>요청 이미지의 세로 길이 : <%= result.height %></div><br><br>
+    
+        <div>썸네일 가로 시작 좌표 : <%= result.thumbnail.x %></div>
+        <div>썸네일 세로 시작 좌표 : <%= result.thumbnail.y %></div>
+        <div>썸네일 가로 길이 : <%= result.thumbnail.width %></div>
+        <div>썸네일 세로 길이 : <%= result.thumbnail.height %></div>
+    
+</body>
+
+</html>
