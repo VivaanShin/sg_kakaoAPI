@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  
+    
+</head>
+
+<body>
+    <h1>
+        포즈 동영상 분석하기 API 입니다.
+    </h1><br>
+    
+    <div class="tsh" style="padding-top:7.5%">
+        <form method="post" action="/pose/videoAnalysis/video_url">
+            1. 동영상 URL로 요청하기
+            동영상 URL을 입력해주세요 :  
+            <input type="text" name="video_url" value=""><br>
+            <button type="submit">동영상 분석하기</button>
+            <button type="reset">내용 리셋하기</button>
+          
+        </form>
+
+      </div>
+    
+
+
+<h3>Single File Upload (Keep Original Filename)</h3>
+<form action="/pose/videoAnalysis/video/uploadFilesWithOriginalFilename" enctype="multipart/form-data" method="post">
+  <input type="file" name="attachment">
+  <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+<hr>
+
+    
+</body>
+
+</html>
+
+

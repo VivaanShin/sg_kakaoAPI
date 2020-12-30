@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+ 
+</head>
+
+<body>
+        
+    
+     <div class="tsh" style="padding-top:7.5%">
+        <form method="post" action="/pose/videoAnalysis/result">
+            동영상 분석중입니다. 결과를 확인하시려면 1분 후(대략) 아래 결과확인 버튼을 눌러주세요
+            <input type="text" name="job_id" value="<%= job_id  %>"><br>
+            <button type="submit">결과 확인</button>
+          
+        </form>
+
+      </div>
+    
+</body>
+
+</html>

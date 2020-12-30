@@ -29,3 +29,65 @@ exports.imageAnalysis_image_url=function(image_url, callback){
         OPTIONS ={};
     })
 }
+
+//동영상 분석하기
+exports.videoAnalysis_video_url=function(video_url, callback){
+    return new Promise((resolve, reject)=>{
+        var OPTIONS = {
+            url: 'https://cv-api.kakaobrain.com/pose/job',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded', 
+                      'Authorization': 'KakaoAK cdb9619875c94bd69dd7754a6d303642'
+                     },
+            
+            form: {
+                "video_url": video_url
+            }
+            
+        }
+        
+        request.post(OPTIONS, function(err, res, result){
+            if(!err){
+                //console.log("result : ", result)
+                console.log("result1 ", result, "result type", typeof(result));
+                result = JSON.parse(result);
+                resolve(result);
+            }else{
+                console.error(err);
+            }
+            
+        });
+        OPTIONS ={};
+    })
+}
+
+
+//동영상 분석하기
+exports.videoAnalysis_result=function(job_id, callback){
+    return new Promise((resolve, reject)=>{
+        var OPTIONS = {
+            url: 'https://cv-api.kakaobrain.com/pose/job',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded', 
+                      'Authorization': 'KakaoAK cdb9619875c94bd69dd7754a6d303642'
+                     },
+            
+            form: {
+                "job_id": job_id,
+                "callback_url": "https://yj-kakao-api.run.goorm.io/pose/videoAnalysis/callback"
+            }
+            
+        }
+        
+        request.get(OPTIONS, function(err, res, result){
+            if(!err){
+                //console.log("result : ", result)
+                console.log("result1 ", result, "result type", typeof(result));
+                result = JSON.parse(result);
+                resolve(result);
+            }else{
+                console.error(err);
+            }
+            
+        });
+        OPTIONS ={};
+    })
+}
