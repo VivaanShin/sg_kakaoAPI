@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  
+    
+</head>
+
+<body>
+        <div>검색된 문서 수 : <%= meta.total_count %></div>
+        <div>노출 가능 문서 수 : <%= meta.pageable_count %></div>
+        <div>현재 페이지가 마지막 페이지인가요? : <%= meta.is_end %></div>
+    
+        <h2>
+            요청하신 '<%= query %>' 검색 결과를 보여드리겠습니다.
+    </h2>
+        <% for(var i=0; i<documents.length; i++){ %>
+            <div>전체 지번 주소 또는 전체 도로명 주소 : <%= documents[i].address_name %></div>
+            <div>주소 타입 : <%= documents[i].address_type %></div>
+            <div>x 좌표값 : <%= documents[i].x %></div>
+            <div>y 좌표값 : <%= documents[i].y %></div>
+    
+    
+            <% if(documents[i].address != null ){ %>
+            <div>전체 지번 주소 : <%= documents[i].address.address_name %></div>
+            <div>지역 1 Depth, 시도 단위 : <%= documents[i].address.region_1depth_name %></div>
+            <div>지역 2 Depth, 구 단위 : <%= documents[i].address.region_2depth_name %></div>
+            <div>지역 3 Depth, 동 단위 : <%= documents[i].address.region_3depth_name %></div>
+            <div>지역 3 Depth, 행정동 명칭 : <%= documents[i].address.region_3depth_h_name %></div>
+            <div>행정 코드 : <%= documents[i].address.h_code %></div>
+            <div>법정 코드 : <%= documents[i].address.b_code %></div>
+            <div>산 여부 : <%= documents[i].address.mountain_yn %></div>
+            <div>지번 주번지 : <%= documents[i].address.main_address_no %></div>
+            <div>지번 부번지. 없을 경우 "" : <%= documents[i].address.sub_address_no %></div>
+            <div>우편번호(6자리) : <%= documents[i].address.zip_code %></div>
+            <div>X 좌표값 혹은 longitude : <%= documents[i].address.x %></div>
+            <div>Y 좌표값 혹은 latitude : <%= documents[i].address.y %></div>
+    
+            <% } %>
+    
+            <% if(documents[i].road_address != null ){ %>
+    
+            <div>전체 도로명 주소 : <%= documents[i].road_address.address_name %></div>
+            <div>지역명1 : <%= documents[i].road_address.region_1depth_name %></div>
+            <div>지역명2 : <%= documents[i].road_address.region_2depth_name %></div>
+            <div>지역명3 : <%= documents[i].road_address.region_3depth_name %></div>
+            <div>도로명 : <%= documents[i].road_address.road_name %></div>
+            <div>지하 여부, Y 또는 N : <%= documents[i].road_address.underground_yn %></div>
+            <div>건물 본번 : <%= documents[i].road_address.main_building_no %></div>
+            <div>건물 부번. 없을 경우 "" : <%= documents[i].road_address.sub_building_no %></div>
+            <div>건물 이름 : <%= documents[i].road_address.building_name %></div>
+            <div>우편번호(5자리) : <%= documents[i].road_address.zone_no %></div>
+            <div>X 좌표값 혹은 longitude : <%= documents[i].road_address.x %></div>
+            <div>Y 좌표값 혹은 latitude : <%= documents[i].road_address.y %></div>
+            <% } %>
+            
+            <br>
+            
+    <% } %>
+    
+    
+        
+    
+    
+</body>
+
+</html>
