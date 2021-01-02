@@ -174,7 +174,7 @@ exports.local_keyword=function(query, callback){
 
 
 //키워드로 검색하기
-exports.local_keyword=function(query, callback){
+exports.local_category=function(query, callback){
     return new Promise((resolve, reject)=>{
         var OPTIONS = {
             url: 'https://dapi.kakao.com/v2/local/search/category.json',
@@ -183,7 +183,7 @@ exports.local_keyword=function(query, callback){
                      },
             
             form: {
-                "query": query
+                "category_group_code": query
             }
             
         }

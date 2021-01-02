@@ -8,6 +8,7 @@ var coord2regioncode = require('../request_modules/req_local').coord2regioncode;
 var coord2address = require('../request_modules/req_local').coord2address;
 var transcoord = require('../request_modules/req_local').transcoord;
 var local_keyword = require('../request_modules/req_local').local_keyword;
+var local_category = require('../request_modules/req_local').local_category;
 var resultData = {};
 
 //routes/local
