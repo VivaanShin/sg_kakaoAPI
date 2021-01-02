@@ -4,6 +4,8 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var router = express.Router();
 var local_search_address = require('../request_modules/req_local').local_search_address;
+var coord2regioncode = require('../request_modules/req_local').coord2regioncode;
+var coord2address = require('../request_modules/req_local').coord2address;
 
 var resultData = {};
 
@@ -40,21 +42,22 @@ router.post('/search_address', async function(req, res, next) {
 });
 
 
-//routes/search/video
+//routes/local/coord2regioncode
 router.get('/coord2regioncode', async function(req, res, next) {
     
     res.render('local_coord2regioncode');
 });
 
 
-//routes/search/video
+//routes/local/coord2regioncode
 router.post('/coord2regioncode', async function(req, res, next) {
     var x = req.body.x;
     var y = req.body.y;
-    var input_coord = req.body.input_coord;
-    var output_coord = req.body.output_coord;
+    console.log("x, y:", x, y);
+    //var input_coord = req.body.input_coord;
+    //var output_coord = req.body.output_coord;
     
-    resultData = await search_video(x, y, input_coord, output_coord);
+    resultData = await coord2regioncode(x, y);
     console.log(resultData, "resultData type", typeof(resultData));
     if(resultData != null){   
         res.render('local_coord2regioncode_result', resultData);
@@ -64,25 +67,24 @@ router.post('/coord2regioncode', async function(req, res, next) {
     
 });
 
-//routes/search/image
-router.get('/image', async function(req, res, next) {
+//routes/local/coord2address
+router.get('/coord2address', async function(req, res, next) {
     
-    res.render('search_image');
+    res.render('local_coord2address');
 });
 
 
-//routes/search/image
-router.post('/image', async function(req, res, next) {
-    var query = req.body.query;
-    console.log("query: ", query, "type query: ", typeof(query));
+//routes/local/coord2address
+router.post('/coord2address', async function(req, res, next) {
+    var x = req.body.x;
+    var y = req.body.y;
+    resultData = await coord2address(x, y);
     
-    resultData = await search_image(query);
-    resultData.query = query;
     console.log(resultData, "resultData type", typeof(resultData));
     if(resultData != null){   
-        res.render('search_image_result', resultData);
+        res.render('local_coord2address_result', resultData);
     }else{
-        res.redirect('search_image');
+        res.redirect('local_coord2address');
     }
     
 });

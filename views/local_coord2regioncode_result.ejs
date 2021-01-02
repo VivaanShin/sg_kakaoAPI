@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  
+    
+</head>
+
+<body>
+        <div>검색된 문서 수 : <%= meta.total_count %></div>
+        <h2>
+            요청하신 검색 결과를 보여드리겠습니다.
+    </h2>
+        <% for(var i=0; i<documents.length; i++){ %>
+            <div>H(행정동) 또는 B(법정동) : <%= documents[i].region_type %></div>
+            <div>전체 지역 명칭 : <%= documents[i].address_name %></div>
+            <div>지역 1Depth, 시도 단위(바다 영역은 존재하지 않음) : <%= documents[i].region_1depth_name %></div>
+            <div>지역 2Depth, 구 단위(바다 영역은 존재하지 않음) : <%= documents[i].region_2depth_name %></div>
+    <div>지역 3Depth, 동 단위(바다 영역은 존재하지 않음) : <%= documents[i].region_3depth_name %></div>
+            <div>지역 4Depth, region_type이 법정동이며, 리 영역인 경우만 존재 : <%= documents[i].region_4depth_name %></div>
+    <div>region 코드 : <%= documents[i].code %></div>
+            <div>X 좌표값 혹은 longitude : <%= documents[i].x %></div>
+    <div>Y 좌표값 혹은 latitude : <%= documents[i].y %></div>
+    
+    
+        <% } %>
+    
+    
+        
+    
+    
+</body>
+
+</html>
