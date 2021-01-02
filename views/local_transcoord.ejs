@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  
+    
+</head>
+
+<body>
+
+    <div class="tsh" style="padding-top:7.5%">
+        <form name="get_story_profile" method="post" action="/local/transcoord">
+           로컬 ( 좌표계 변환 )<br>
+            x 좌표 :  <input type="text" name="x" value=""><br>
+            y 좌표 :  <input type="text" name="y" value=""><br>
+            입력 값 좌표 체계 :  <input type="text" name="input_coord" value=""><br>
+            변환 값 좌표 체계 :  <input type="text" name="output_coord" value=""><br>
+            <button type="submit">검색하기</button>
+            <button type="reset">내용 리셋하기</button>
+            
+            
+          
+        </form>
+
+      </div>
+    
+     <h3>
+        예시 데이터<br>
+        
+        x좌표 : 160710.37729270622<br>
+        y좌표 : -4388.879299157299<br>
+         
+        입력 값 좌표 체계: WTM<br>
+        변환 값 좌표 체계: WGS84
+    </h3>
+    
+    
+    
+</body>
+
+</html>

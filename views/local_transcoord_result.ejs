@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  
+    
+</head>
+
+<body>
+        <div>검색된 문서 수 : <%= meta.total_count %></div>
+        <h2>
+            요청하신 검색 결과를 보여드리겠습니다.
+    </h2>
+        <div>x 좌표, 경위도인 경우 longitude : <%= documents[0].x %></div>
+        <div>y 좌표, 경위도인 경우 latitude : <%= documents[0].y %></div>
+    
+        
+    
+    
+</body>
+
+</html>

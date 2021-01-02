@@ -6,7 +6,7 @@ var router = express.Router();
 var local_search_address = require('../request_modules/req_local').local_search_address;
 var coord2regioncode = require('../request_modules/req_local').coord2regioncode;
 var coord2address = require('../request_modules/req_local').coord2address;
-
+var transcoord = require('../request_modules/req_local').transcoord;
 var resultData = {};
 
 //routes/local
@@ -78,6 +78,7 @@ router.get('/coord2address', async function(req, res, next) {
 router.post('/coord2address', async function(req, res, next) {
     var x = req.body.x;
     var y = req.body.y;
+    console.log("x, y:", x, y)
     resultData = await coord2address(x, y);
     
     console.log(resultData, "resultData type", typeof(resultData));
@@ -88,6 +89,34 @@ router.post('/coord2address', async function(req, res, next) {
     }
     
 });
+
+//routes/local/transcoord
+router.get('/transcoord', async function(req, res, next) {
+    
+    res.render('local_transcoord');
+});
+
+
+//routes/local/transcoord
+router.post('/transcoord', async function(req, res, next) {
+    var x = req.body.x;
+    var y = req.body.y;
+    var input_coord = req.body.input_coord;
+    var output_coord = req.body.output_coord;
+    
+    console.log("x, y:", x, y)
+    resultData = await transcoord(x, y, input_coord, output_coord);
+    
+    console.log(resultData, "resultData type", typeof(resultData));
+    if(resultData != null){   
+        res.render('local_transcoord_result', resultData);
+    }else{
+        res.redirect('local_transcoord');
+    }
+    
+});
+
+
 
 //routes/search/blog
 router.get('/blog', async function(req, res, next) {
