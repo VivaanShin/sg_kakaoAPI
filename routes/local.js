@@ -7,6 +7,7 @@ var local_search_address = require('../request_modules/req_local').local_search_
 var coord2regioncode = require('../request_modules/req_local').coord2regioncode;
 var coord2address = require('../request_modules/req_local').coord2address;
 var transcoord = require('../request_modules/req_local').transcoord;
+var local_keyword = require('../request_modules/req_local').local_keyword;
 var resultData = {};
 
 //routes/local
@@ -117,72 +118,48 @@ router.post('/transcoord', async function(req, res, next) {
 });
 
 
-
-//routes/search/blog
-router.get('/blog', async function(req, res, next) {
+//routes/local/keyword
+router.get('/keyword', async function(req, res, next) {
     
-    res.render('search_blog');
+    res.render('local_keyword');
 });
 
 
-//routes/search/blog
-router.post('/blog', async function(req, res, next) {
+//routes/local/keyword
+router.post('/keyword', async function(req, res, next) {
     var query = req.body.query;
-    console.log("query: ", query, "type query: ", typeof(query));
     
-    resultData = await search_blog(query);
+    console.log("query", query)
+    resultData = await local_keyword(query);
     resultData.query = query;
     console.log(resultData, "resultData type", typeof(resultData));
     if(resultData != null){   
-        res.render('search_blog_result', resultData);
+        res.render('local_keyword_result', resultData);
     }else{
-        res.redirect('search_blog');
+        res.redirect('local_keyword');
     }
     
 });
 
-//routes/search/book
-router.get('/book', async function(req, res, next) {
+//routes/local/category
+router.get('/category', async function(req, res, next) {
     
-    res.render('search_book');
+    res.render('local_category');
 });
 
 
-//routes/search/book
-router.post('/book', async function(req, res, next) {
+//routes/local/category
+router.post('/category', async function(req, res, next) {
     var query = req.body.query;
-    console.log("query: ", query, "type query: ", typeof(query));
     
-    resultData = await search_book(query);
+    console.log("query", query)
+    resultData = await local_category(query);
     resultData.query = query;
     console.log(resultData, "resultData type", typeof(resultData));
     if(resultData != null){   
-        res.render('search_book_result', resultData);
+        res.render('local_category_result', resultData);
     }else{
-        res.redirect('search_book');
-    }
-    
-});
-
-//routes/search/cafe
-router.get('/cafe', async function(req, res, next) {
-    
-    res.render('search_cafe');
-});
-
-
-//routes/search/cafe
-router.post('/cafe', async function(req, res, next) {
-    var query = req.body.query;
-    console.log("query: ", query, "type query: ", typeof(query));
-    
-    resultData = await search_cafe(query);
-    resultData.query = query;
-    console.log(resultData, "resultData type", typeof(resultData));
-    if(resultData != null){   
-        res.render('search_cafe_result', resultData);
-    }else{
-        res.redirect('search_cafe');
+        res.redirect('local_category');
     }
     
 });
