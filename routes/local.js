@@ -11,7 +11,7 @@ var local_keyword = require('../request_modules/req_local').local_keyword;
 var local_category = require('../request_modules/req_local').local_category;
 var resultData = {};
 
-//routes/local
+//routes/map
 router.get('/', async function(req, res, next) {
     
     res.render('local');
@@ -19,7 +19,7 @@ router.get('/', async function(req, res, next) {
 
 
 
-//routes/local/search_address
+//routes/map/search_address
 router.get('/search_address', async function(req, res, next) {
     
     res.render('local_search_address');

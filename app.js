@@ -22,6 +22,7 @@ var multerRouter = require('./routes/multer');
 var poseRouter = require('./routes/pose');
 var voiceRouter = require('./routes/voice');
 var localRouter = require('./routes/local');
+var mapRouter = require('./routes/map');
 
 
 const dotenv = require('dotenv').config();
@@ -69,6 +70,7 @@ app.use('/multer', multerRouter);
 app.use('/pose', poseRouter);
 app.use('/voice', voiceRouter);
 app.use('/local', localRouter);
+app.use('/map', mapRouter);
 
 
 app.use(passport.initialize());
