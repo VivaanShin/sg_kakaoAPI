@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Kakao rest api</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+
+<body>
+    <h1>
+        갱신된 토큰 정보 보기
+    </h1><br>
+    <h2>
+        토큰 타입: <%= token_type %>
+    </h2>
+    <h2>
+        갱신된 사용자 액세스 토큰 값 : <%= access_token %>
+    </h2>
+    <h2>
+        액세스 토큰 만료 시간(초) : <%= expires_in %>
+    </h2>
+    <h2>
+        갱신된 사용자 리프레시 토큰 값, 기존 리프레시 토큰의 유효기간이 1개월 미만인 경우에만 갱신 : <%= refresh_token %>
+    </h2>
+    
+    <br>
+    <div class="tsh" style="padding-top:7.5%">
+        <form method="get" action="/oauth/token/refresh">
+            <button type="submit">토큰 갱신하기</button>
+        </form>
+
+      </div>
+    
+    
+
+</body>
+
+</html>

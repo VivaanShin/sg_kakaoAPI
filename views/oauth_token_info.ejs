@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Kakao rest api</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+
+<body>
+    <h1>
+        토큰 정보 보기
+    </h1><br>
+    <h2>
+        회원번호: <%= id %>
+    </h2>
+    <h2>
+        액세스 토큰 만료 시간(초) : <%= expires_in %>
+    </h2>
+    <h2>
+        액세스 토큰 만료 시간(밀리초) : <%= expiresInMillis %>
+    </h2>
+    <h2>
+        토큰이 발급된 앱 ID : <%= app_id %>
+    </h2><br>
+    <div class="tsh" style="padding-top:7.5%">
+        <form method="get" action="/oauth/token/refresh">
+            <button type="submit">토큰 갱신하기</button>
+        </form>
+
+      </div>
+    
+    
+
+</body>
+
+</html>

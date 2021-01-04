@@ -40,7 +40,8 @@ exports.videoAnalysis_video_url=function(video_url, callback){
                      },
             
             form: {
-                "video_url": video_url
+                "video_url": video_url,
+                "callback_url": "https://yj-kakao-api.run.goorm.io/pose/videoAnalysis/callback"
             }
             
         }
