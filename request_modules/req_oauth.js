@@ -151,11 +151,8 @@ exports.user_info_token=function(token, callback){
         var OPTIONS = {
             url: 'https://kapi.kakao.com/v2/user/me',
             headers: {
-                'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-            },
-            form: {
-                Authorization: token
-                
+                'Content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+                'Authorization': 'Bearer ' + token
             }
             
         }
@@ -200,5 +197,58 @@ exports.user_info_admin=function(callback){
 }
 
 
+//사용자 정보 저장하기
+exports.user_info_save=function(token, callback){
+    return new Promise((resolve, reject)=>{
+        var OPTIONS = {
+            url: 'https://kapi.kakao.com/v1/user/update_profile',
+            headers: {
+                'Content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+                'Authorization': 'Bearer ' + token
+            },
+            form:{
+                'properties' : {"nickname":"신윤재", "birthday":"0805"}
+            }
+            
+        }
+        
+        request.post(OPTIONS, function(err, res, result){
+            if(!err){
+                result = JSON.parse(result);
+                console.log("result1", result)
+                resolve(result);
+            }else{
+                console.error(err);
+            }
+            
+        });
+        OPTIONS ={};
+    })
+}
 
+//사용자 목록 받기
+exports.user_info_list=function(callback){
+    return new Promise((resolve, reject)=>{
+        var OPTIONS = {
+            url: 'https://kapi.kakao.com//v1/user/ids',
+            headers: {
+                'Content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+                'Authorization': 'KakaoAK ' + "12d4c95ea956909418dcc15ff61c2dca"
+            }
+            
+        }
+        
+        request.get(OPTIONS, function(err, res, result){
+            if(!err){
+                result = JSON.parse(result);
+                console.log("result1", result)
+                resolve(result);
+            }else{
+                console.error(err);
+            }
+            
+        });
+        OPTIONS ={};
+    })
+}
 

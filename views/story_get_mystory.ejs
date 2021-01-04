@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Kakao rest api</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+
+<body>
+    <h1>
+        내 스토리 가져오기(1개)
+    </h1><br>
+    
+    <div> 스토리 아이디 : <%= id %> </div>
+    <div> 스토리 url : <%= url %> </div>
+    <div> 스토리 종류 : <%= media_type %> </div>
+    <% if(media != "null"){ %>
+        <div> 사진 스토리(PHOTO)인 경우 제공, 이미지 크기별 URL : <%= media %> </div>
+    <% } %>
+    <div> 게시 시간 : <%= created_at %> </div>
+    <div> 댓글 수 : <%= comment_count %> </div>
+    <div> 느낌 수 : <%= like_count %> </div>
+    <div> 스토리 내용 : <%= content %> </div>
+    
+    <% if(comments != "null"){ %>
+        <% for (i=0; i < comments.length; i++){ %>
+            <div> 댓글 내용 : <%= comments[i].text %> </div>
+            <div> 댓글 작성자 닉네임 : <%= comments[i].writer.display_name %> </div>
+            <div> 댓글 작성자 프로필 미리보기 URL : <%= comments[i].writer.profile_thumbnail_url %> </div>
+        <% } %>
+    <% } %>
+    
+    <% if(likes != "null"){ %>
+        <% for (j=0; j < likes.length; j++){ %>
+            <div> 스토리에 남기는 이모티콘 : <%= likes[i].emotion %> </div>
+            <div> 느낌 작성자 닉네임 : <%= likes[i].actor.display_name %> </div>
+            <div> 느낌 작성자 프로필 미리보기 URL : <%= likes[i].actor.profile_thumbnail_url %> </div>
+        <% } %>
+    <% } %>
+    <div> 스토리 공개 범위 : <%= permission %> </div>
+
+</body>
+
+</html>

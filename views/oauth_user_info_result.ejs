@@ -9,15 +9,36 @@
 
 <body>
     <h1>
-        갱신된 토큰 정보 보기
+        토큰으로 사용자 정보 보기
     </h1><br>
-    <h2>
-        사용자 ID 타입, user_id로 고정: <%= target_id_type %>
-    </h2>
-    <h2>
-        회원번호 : <%= target_id %>
-    </h2>
-      </div>
+
+    <h2> 사용자 ID : <%= id %> </h2>
+    <h2> 연결된 시간 : <%= connected_at %> </h2>
+    <h2> 카카오 계정 닉네임 : <%= properties.nickname %> </h2>
+    <h2> profile_needs_agreement : <%= kakao_account.profile_needs_agreement %> </h2>
+    <h2> 서비스에서 쓰이는 사용자 닉네임 : <%= kakao_account.profile.nickname %> </h2>
+    <h2> has_email : <%= kakao_account.has_email %> </h2>
+    <h2> email_needs_agreement : <%= kakao_account.email_needs_agreement %> </h2>
+    <h2> is_email_valid : <%= kakao_account.is_email_valid %> </h2>
+    <h2> is_email_verified : <%= kakao_account.is_email_verified %> </h2>
+    <h2> email : <%= kakao_account.email %> </h2>
+    <h2> has_phone_number : <%= kakao_account.has_phone_number %> </h2>
+    <h2> phone_number_needs_aggrement: : <%= kakao_account.phone_number_needs_aggrement %> </h2>
+    <h2> phone_number : <%= kakao_account.phone_number %> </h2>
+    <h2> has_age_range : <%= kakao_account.has_age_range %> </h2>
+    <h2> age_range_needs_agreement : <%= kakao_account.age_range_needs_agreement %> </h2>
+    <h2> age_range : <%= kakao_account.age_range %> </h2>
+    <h2> has_birthyear : <%= kakao_account.has_birthyear %> </h2>
+    <h2> birthyear_needs_agreement : <%= kakao_account.birthyear_needs_agreement %> </h2>
+    <h2> birthyear : <%= kakao_account.birthyear %> </h2>
+    <h2> has_birthday : <%= kakao_account.has_birthday %> </h2>
+    <h2> birthday_needs_agreement : <%= kakao_account.birthday_needs_agreement %> </h2>
+    <h2> birthday : <%= kakao_account.birthday %> </h2>
+    <h2> birthday_type : <%= kakao_account.birthday_type %> </h2>
+    <h2> has_gender : <%= kakao_account.has_gender %> </h2>
+    <h2> gender_needs_agreement : <%= kakao_account.gender_needs_agreement %> </h2>
+    <h2> gender : <%= kakao_account.gender %> </h2>
+    
     
     
 

@@ -93,3 +93,29 @@ exports.write_text=function(token, content, callback){
         
     })
 }
+
+//내 스토리 가져오기
+exports.get_mystory=function(token, story_id, callback){
+    return new Promise((resolve, reject)=>{
+        var OPTIONS = {
+            url: 'https://kapi.kakao.com/v1/api/story/mystory?id='+ story_id,
+            headers: {'Authorization': 'Bearer ' + token
+                     }
+            
+        }
+        
+        console.log("OPTIONS check: ", OPTIONS);
+        request.get(OPTIONS, function(err, res, result){
+            if(!err){
+                result = JSON.parse(result);
+                console.log("result1 ", result, "result type", typeof(result));
+                
+                resolve(result);
+            }else{
+                console.error(err);
+            }
+            
+        });
+        
+    })
+}
