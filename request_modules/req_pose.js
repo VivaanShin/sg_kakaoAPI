@@ -61,19 +61,14 @@ exports.videoAnalysis_video_url=function(video_url, callback){
 }
 
 
-//동영상 분석하기
+//동영상 분석 결과보기
 exports.videoAnalysis_result=function(job_id, callback){
     return new Promise((resolve, reject)=>{
         var OPTIONS = {
-            url: 'https://cv-api.kakaobrain.com/pose/job',
-            headers: {'Content-Type': 'application/x-www-form-urlencoded', 
+            url: 'https://cv-api.kakaobrain.com/pose/job/' + job_id,
+            headers: { 
                       'Authorization': 'KakaoAK cdb9619875c94bd69dd7754a6d303642'
-                     },
-            
-            form: {
-                "job_id": job_id,
-                "callback_url": "https://yj-kakao-api.run.goorm.io/pose/videoAnalysis/callback"
-            }
+                     }
             
         }
         

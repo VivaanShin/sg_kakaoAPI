@@ -59,19 +59,32 @@
       <h3 class="mb-5">
         <em>카카오 API 다써보자</em>
       </h3>
-      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#SOCIAL_API">소셜 API 이동</a>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#LOGIN_API">로그인 API 이동</a>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#SOCIAL_API">소셜 API 이동</a>
         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#BUSINESS_API">비즈니스 API 이동</a>
         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#AI_API">인공지능 API 이동</a>
+        <br>
+        <br>
+        <h2>
+            <% if(login_check != null){ %>
+                <%= login_check %>
+            <% } %>
+            
+        </h2>
+        
     </div>
+
     <div class="overlay"></div>
   </header>
-
+    
+    
+    
   <!-- Portfolio -->
-  <section class="content-section" id="SOCIAL_API">
+  <section class="content-section" id="LOGIN_API">
     <div class="container">
       <div class="content-section-heading text-center">
         <h3 class="text-secondary mb-0">카카오</h3>
-        <h2 class="mb-5">소셜통합 API</h2>
+        <h2 class="mb-5">로그인 API</h2>
       </div>
       <div class="row no-gutters">
         <div class="col-lg-6">
@@ -93,15 +106,26 @@
                   <p class="mb-0">ver REST API_passport</p>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
+            <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
           </a>
         </div>
           <div class="col-lg-6">
-          <a class="portfolio-item" href="/kauth/kakao">
+          <a class="portfolio-item" href="/logout">
             <div class="caption">
               <div class="caption-content">
-                <div class="h2">카카오 로그인</div>
-                  <p class="mb-0">ver REST API_basic</p>
+                <div class="h2">카카오 로그아웃</div>
+                  <p class="mb-0">ver Javascript</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
+          </a>
+        </div>
+          <div class="col-lg-6">
+          <a class="portfolio-item" href="/oauth/logout">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">카카오 로그아웃</div>
+                  <p class="mb-0">ver REST API</p>
               </div>
             </div>
             <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
@@ -111,7 +135,7 @@
           <a class="portfolio-item" href="/logout">
             <div class="caption">
               <div class="caption-content">
-                <div class="h2">카카오 로그아웃</div>
+                <div class="h2">카카오 계정과 함께 로그아웃</div>
                   <p class="mb-0">ver Javascript</p>
               </div>
             </div>
@@ -126,9 +150,22 @@
                   <p class="mb-0">ver Javascript</p>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
+            <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
           </a>
         </div>
+        </div>
+      </div>
+    
+    </section>
+  <!-- Portfolio -->
+  <section class="content-section" id="SOCIAL_API">
+    <div class="container">
+      <div class="content-section-heading text-center">
+        <h3 class="text-secondary mb-0">카카오</h3>
+        <h2 class="mb-5">소셜통합 API</h2>
+      </div>
+        <div class="row no-gutters">
+      
         <div class="col-lg-6">
           <a class="portfolio-item" href="/social/profile">
             <div class="caption">
@@ -201,8 +238,8 @@
             <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
           </a>
         </div>
+    </div>
       </div>
-    </div></br>
     </section>
     <section class="content-section" id="BUSINESS_API">
     <div class="container">
@@ -265,7 +302,6 @@
         </div>
       </div>
     </div>
-  </br>
 </section>
     <section class="content-section" id="AI_API">
   <div class="container">
