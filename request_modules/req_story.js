@@ -153,7 +153,7 @@ exports.get_mystories=function(token, callback){
 exports.delete_mystory=function(token, story_id, callback){
     return new Promise((resolve, reject)=>{
         var OPTIONS = {
-            url: 'https://kapi.kakao.com//v1/api/story/delete/mystory?id=' + story_id,
+            url: 'https://kapi.kakao.com/v1/api/story/delete/mystory?id=' + story_id,
             headers: {'Authorization': 'Bearer ' + token
                      }
             
@@ -161,6 +161,35 @@ exports.delete_mystory=function(token, story_id, callback){
         
         console.log("OPTIONS check: ", OPTIONS);
         request.delete(OPTIONS, function(err, res, result){
+            if(!err){
+                
+                console.log("result1 ", result, "result type", typeof(result));
+                resolve(result);
+            }else{
+                console.error(err);
+            }
+            
+        });
+        
+    })
+}
+
+
+
+//이미지 업로드 하기
+exports.upload_image=function(token, file, callback){
+    return new Promise((resolve, reject)=>{
+        var OPTIONS = {
+            url: 'https://kapi.kakao.com/v1/api/story/upload/multi',
+            headers: {'Authorization': 'Bearer ' + token,
+                      'Content-Type': 'multipart/form-data; boundary=---------------------------012345678901234567890123456'
+                     },
+            file:  file
+            
+        }
+        
+        console.log("OPTIONS check: ", OPTIONS);
+        request.post(OPTIONS, function(err, res, result){
             if(!err){
                 
                 console.log("result1 ", result, "result type", typeof(result));

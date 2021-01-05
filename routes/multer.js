@@ -4,17 +4,18 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var router = express.Router();
 var multer = require('multer')
+var fs = require('fs');
 
 var storage  = multer.diskStorage({ // 2
   destination(req, file, cb) {
-    cb(null, 'uploadedFiles/');
+    cb(null, 'public/uploadedFiles/');
   },
   filename(req, file, cb) {
     cb(null, `${Date.now()}__${file.originalname}`);
   },
 });
 
-var upload = multer({ dest: 'uploadedFiles/' }); // 3-1
+var upload = multer({ dest: 'public/uploadedFiles/' }); // 3-1
 var uploadWithOriginalFilename = multer({ storage: storage }); // 3-2
 
 

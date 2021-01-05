@@ -27,7 +27,7 @@ var server = http.createServer(app);
  */
 
 server.listen(port, function(){
-    var dir = './uploadedFiles';
+    var dir = '/uploadedFiles';
     if(!fs.existsSync(dir)) fs.mkdirSync(dir);
 });
 server.on('error', onError);

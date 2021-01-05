@@ -53,7 +53,7 @@ router.get('/kakao/callback',async function(req, res){
     console.log("req.session\n", req.session);
     req.session.save(function(){
         if(req.session.token != null){
-        res.redirect(200,'/');
+        res.redirect('/');
     }else{
         resultData.login_check = "현재 비로그인 상태입니다.";
         res.render('index', resultData);
@@ -75,7 +75,7 @@ router.get('/logout', async function(req, res, next) {
        var result = await req_oauth.logout_token(token);
         req.session = null;
         resultData.login_check = "현재 비로그인 상태입니다.";
-        res.redirect(200, '/');
+        res.redirect('/');
        
        
    }else{

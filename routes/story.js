@@ -3,10 +3,29 @@ var request = require('request');
 var session = require('express-session');
 var flash = require('connect-flash');
 var router = express.Router();
-var req_story = require('../request_modules/req_story');
+var multer = require('multer')
+var fs = require('fs');
 
-var API_Call = require('../service/API_Call')('kakao');
+var storage  = multer.diskStorage({ // 2
+  destination(req, file, cb) {
+    cb(null, 'public/uploadedFiles/');
+  },
+  filename(req, file, cb) {
+    cb(null, `${file.originalname}`);
+  },
+});
+
+var upload = multer({ dest: 'public/uploadedFiles/' }); // 3-1
+var uploadWithOriginalFilename = multer({ storage: storage }); // 3-2
+
+
+
+
+
+var req_story = require('../request_modules/req_story');
 var resultData = {};
+
+
 /* GET home page. */
 router.get('/check', async function(req, res, next) {
     var token = req.session.token;
@@ -126,7 +145,28 @@ router.post('/delete_mystory', async function(req,res,next){
     res.render('story_get_mystories', resultData);
 })
 
+//routes/story/writeWithImage
+router.get('/writeWithImage', async function(req,res,next){
+    
+    res.render('story_writeWithImage');
+})
 
+//routes/story/uplodeWithImage
+router.post('/uplodeWithImage', upload.single('attachment'), async function(req,res,next){
+    console.log(req.file);
+    var file = req.file;
+    var token = req.session.token;
+    resultData = await req_story.upload_image(token, file)
+    res.render('story_writeWithImage');
+})
 
+//routes/story/uplodeWithImageOriginalFilename
+router.post('/uplodeWithImageOriginalFilename', uploadWithOriginalFilename.single('attachment'), async function(req,res,next){
+    console.log(req.file);
+    var file = req.file;
+    var token = req.session.token;
+    resultData = await req_story.upload_image(token, file)
+    res.render('story_writeWithImage');
+})
 
 module.exports = router;
