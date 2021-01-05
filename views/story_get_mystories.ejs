@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Kakao rest api</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+
+<body>
+    
+    <% if(delete_check == "y"){ %>
+        <h2>
+            요청하신 스토리 삭제 처리가 완료되었습니다!
+    </h2>
+    <% } %>
+    
+    
+    <h1>
+        내 스토리 가져오기(여러 개)
+    </h1><br>
+    
+        <div>
+        <form method="post" action="/story/get_mystory">
+            <h3>
+                자세히 조회하고 싶은 스토리 아이디를 입력해주세요! <br>
+            </h3>
+            작성 :  <input type="text" name="story_id" value=""><br>
+            <button type="submit">지정 스토리 조회하기</button>
+        </form>
+      </div><br><br>
+    
+        <div>
+        <form method="post" action="/story/delete_mystory">
+            <h3>
+                삭제하고 싶은 스토리 아이디를 입력해주세요! <br>
+            </h3>
+            작성 :  <input type="text" name="story_id" value=""><br>
+            <button type="submit">지정 스토리 삭제하기</button>
+        </form>
+      </div><br><br>
+    
+            <div>
+        <form  method="get" action="/story/get_mystories">
+            <h3>
+                다시 리스트를 조회하고 싶으시면 아래 조회 버튼을 눌러주세요!<br>
+            </h3>
+            <button type="submit">여러 스토리 다시 조회하기</button>
+        </form>
+      </div><br><br>
+    
+    
+    
+    <% for(k=0; k < story.length; k++){ %>
+         <div> 스토리 아이디 : <%= story[k].id %> </div>
+        <div> 스토리 url : <%= story[k].url %> </div>
+        <div> 스토리 종류 : <%= story[k].media_type %> </div>
+        <% if(story[k].media_type == "PHOTO"){ %>
+            <% for(m=0; m < story[k].media.lentgh; m++){ %>
+        
+    
+                <div> 사진 스토리(PHOTO)인 경우 제공, original 이미지 URL : <%= story[k].media[m].original %> </div>
+                <div> 사진 스토리(PHOTO)인 경우 제공, xlarge 이미지 URL : <%= story[k].media[m].xlarge %> </div>
+                <div> 사진 스토리(PHOTO)인 경우 제공, large 이미지 URL : <%= story[k].media[m].large %> </div>
+                <div> 사진 스토리(PHOTO)인 경우 제공, medium 이미지 URL : <%= story[k].media[m].medium %> </div>
+                <div> 사진 스토리(PHOTO)인 경우 제공, small 이미지 URL: <%= story[k].media[m].small %> </div>
+    
+            <% } %>
+        <% } %>
+        <div> 게시 시간 : <%= story[k].created_at %> </div>
+        <div> 댓글 수 : <%= story[k].comment_count %> </div>
+        <div> 느낌 수 : <%= story[k].like_count %> </div>
+        <div> 스토리 내용 : <%= story[k].content %> </div>
+
+
+        <div> 스토리 공개 범위 : <%= story[k].permission %> </div><br>
+        
+        
+    <% } %>
+   
+
+</body>
+
+</html>

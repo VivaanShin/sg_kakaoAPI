@@ -73,7 +73,8 @@ exports.write_text=function(token, content, callback){
                      },
             
             form: {
-                "content": content
+                "content": content,
+                "permission": "M"
             }
             
         }
@@ -94,7 +95,7 @@ exports.write_text=function(token, content, callback){
     })
 }
 
-//내 스토리 가져오기
+//내 지정된 스토리 가져오기
 exports.get_mystory=function(token, story_id, callback){
     return new Promise((resolve, reject)=>{
         var OPTIONS = {
@@ -110,6 +111,59 @@ exports.get_mystory=function(token, story_id, callback){
                 result = JSON.parse(result);
                 console.log("result1 ", result, "result type", typeof(result));
                 
+                resolve(result);
+            }else{
+                console.error(err);
+            }
+            
+        });
+        
+    })
+}
+
+
+//내 여러개 스토리 가져오기
+exports.get_mystories=function(token, callback){
+    return new Promise((resolve, reject)=>{
+        var OPTIONS = {
+            url: 'https://kapi.kakao.com/v1/api/story/mystories',
+            headers: {'Authorization': 'Bearer ' + token
+                     }
+            
+        }
+        
+        console.log("OPTIONS check: ", OPTIONS);
+        request.get(OPTIONS, function(err, res, result){
+            if(!err){
+                result = JSON.parse(result);
+                console.log("result1 ", result, "result type", typeof(result));
+                
+                resolve(result);
+            }else{
+                console.error(err);
+            }
+            
+        });
+        
+    })
+}
+
+
+//내 스토리 삭제하기
+exports.delete_mystory=function(token, story_id, callback){
+    return new Promise((resolve, reject)=>{
+        var OPTIONS = {
+            url: 'https://kapi.kakao.com//v1/api/story/delete/mystory?id=' + story_id,
+            headers: {'Authorization': 'Bearer ' + token
+                     }
+            
+        }
+        
+        console.log("OPTIONS check: ", OPTIONS);
+        request.delete(OPTIONS, function(err, res, result){
+            if(!err){
+                
+                console.log("result1 ", result, "result type", typeof(result));
                 resolve(result);
             }else{
                 console.error(err);

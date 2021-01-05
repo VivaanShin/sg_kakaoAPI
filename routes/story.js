@@ -33,7 +33,8 @@ router.get('/write_text', function(req,res,next){
     res.render('story_write_text');
 })
 
-
+//rest form permission이 공개범위, 현재 나만보기로 설정되어있음
+//routes/story/write_text
 router.post('/write_text', async function(req, res, next) {
     var token = req.session.token;
     console.log(req.body);
@@ -54,17 +55,14 @@ router.post('/write_text', async function(req, res, next) {
 //routes/story/get_mystory
 router.get('/get_mystory', async function(req,res,next){
     var token = req.session.token;
-    console.log(req.session.story_id);
+    console.log("session story_id: ",req.session.story_id);
     var story_id = req.session.story_id;
     resultData = await req_story.get_mystory(token, story_id);
-    if(resultData.media != undefined){
-        resultData.media = "null";
+    if(resultData.hasOwnProperty('comments') != true){
+        resultData.comments = "NOT DATA";
     }
-    if(resultData.comments != undefined){
-        resultData.comments = "null";
-    }
-    if(resultData.likes != undefined){
-        resultData.likes = "null";
+    if(resultData.hasOwnProperty('likes') != true){
+        resultData.likes = "NOT DATA";
     }
     
     
@@ -73,5 +71,62 @@ router.get('/get_mystory', async function(req,res,next){
     
     res.render('story_get_mystory', resultData);
 })
+
+//routes/story/get_mystory
+router.post('/get_mystory', async function(req,res,next){
+    var token = req.session.token;
+    console.log("session story_id: ",req.session.story_id);
+    var story_id = req.session.story_id;
+    if(req.body.story_id != null){
+        story_id = req.body.story_id;
+    }
+    resultData = await req_story.get_mystory(token, story_id);
+    if(resultData.hasOwnProperty('comments') != true){
+        resultData.comments = "NOT DATA";
+    }
+    if(resultData.hasOwnProperty('likes') != true){
+        resultData.likes = "NOT DATA";
+    }
+    
+    
+    
+    console.log("resultData\n", resultData);
+    
+    res.render('story_get_mystory', resultData);
+})
+
+//routes/story/get_mystories
+router.get('/get_mystories', async function(req,res,next){
+    var token = req.session.token;
+    var result = await req_story.get_mystories(token);
+    resultData.story = result;
+    resultData.delete_check = "n";
+    
+    console.log("resultData\n", resultData);
+    
+    res.render('story_get_mystories', resultData);
+})
+
+
+//routes/story/delete_mystory
+router.post('/delete_mystory', async function(req,res,next){
+    var token = req.session.token;
+    var story_id = req.body.story_id;
+    console.log("story_id: ", story_id);
+    var delete_result = await req_story.delete_mystory(token, story_id);
+    var result = await req_story.get_mystories(token);
+    resultData.story = result;
+    
+    resultData.delete_check = "y";
+    
+    
+    
+    console.log("resultData\n", resultData);
+    
+    res.render('story_get_mystories', resultData);
+})
+
+
+
 
 module.exports = router;

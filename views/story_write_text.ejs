@@ -11,24 +11,34 @@
 
 <body>
 
-    <div class="tsh" style="padding-top:7.5%">
+    <h2>
+                카카오 스토리 작성하기!
+            </h2>
+        <br>
+    <div>
         <form name="get_story_profile" method="post" action="/story/write_text">
             카카오 스토리에 올릴 내용을 작성해주세요!(최대2048자)
             작성 :  <input type="text" name="content" value=""><br>
             <button type="submit">등록하기</button>
             <button type="reset">내용 리셋하기</button>
           
-        </form>
+        </form><br><br>
 
       </div>
-    <div class="tsh" style="padding-top:7.5%">
+    <div>
         <form name="get_story_profile" method="get" action="/story/get_mystory">
-            <button type="submit">지정 스토리 받기</button>
+            <h2>
+                방금 작성한 스토리를 조회하시겠습니까?
+            </h2>
+            <button type="submit">지정 스토리 조회하기</button>
         </form>
-      </div>
-        <div class="tsh" style="padding-top:7.5%">
+      </div><br><br>
+        <div>
         <form name="get_story_profile" method="get" action="/story/get_mystories">
-            <button type="submit">지정 스토리 받기</button>
+            <h2>
+                내 스토리를 모두 조회하시겠습니까?
+            </h2>
+            <button type="submit">여러 스토리 조회하기</button>
         </form>
       </div>
     

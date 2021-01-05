@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  
     <h1>
         내 스토리 가져오기(1개)
     </h1><br>
@@ -15,15 +16,19 @@
     <div> 스토리 아이디 : <%= id %> </div>
     <div> 스토리 url : <%= url %> </div>
     <div> 스토리 종류 : <%= media_type %> </div>
-    <% if(media != "null"){ %>
-        <div> 사진 스토리(PHOTO)인 경우 제공, 이미지 크기별 URL : <%= media %> </div>
+    <% if(media_type == "PHOTO"){ %>
+            <div> 사진 스토리(PHOTO)인 경우 제공, original 이미지 URL : <%= media.original %> </div>
+            <div> 사진 스토리(PHOTO)인 경우 제공, xlarge 이미지 URL : <%= media.xlarge %> </div>
+            <div> 사진 스토리(PHOTO)인 경우 제공, large 이미지 URL : <%= media.large %> </div>
+            <div> 사진 스토리(PHOTO)인 경우 제공, medium 이미지 URL : <%= media.medium %> </div>
+            <div> 사진 스토리(PHOTO)인 경우 제공, small 이미지 URL: <%= media.small %> </div>
     <% } %>
     <div> 게시 시간 : <%= created_at %> </div>
     <div> 댓글 수 : <%= comment_count %> </div>
     <div> 느낌 수 : <%= like_count %> </div>
     <div> 스토리 내용 : <%= content %> </div>
     
-    <% if(comments != "null"){ %>
+    <% if(comments != "NOT DATA"){ %>
         <% for (i=0; i < comments.length; i++){ %>
             <div> 댓글 내용 : <%= comments[i].text %> </div>
             <div> 댓글 작성자 닉네임 : <%= comments[i].writer.display_name %> </div>
@@ -31,14 +36,29 @@
         <% } %>
     <% } %>
     
-    <% if(likes != "null"){ %>
+    <% if(likes != "NOT DATA"){ %>
         <% for (j=0; j < likes.length; j++){ %>
             <div> 스토리에 남기는 이모티콘 : <%= likes[i].emotion %> </div>
             <div> 느낌 작성자 닉네임 : <%= likes[i].actor.display_name %> </div>
             <div> 느낌 작성자 프로필 미리보기 URL : <%= likes[i].actor.profile_thumbnail_url %> </div>
         <% } %>
     <% } %>
-    <div> 스토리 공개 범위 : <%= permission %> </div>
+    <div> 스토리 공개 범위 : <%= permission %> </div><br><br>
+    
+    
+    <div>
+        <form method="post" action="/story/delete_mystory">
+            스토리를 삭제하시려면 스토리 아이디를 입력해주세요! <br>
+            작성 :  <input type="text" name="story_id" value=""><br>
+            <button type="submit">지정 스토리 삭제하기</button>
+        </form>
+      </div>
+    
+    <div>
+        <form  method="get" action="/story/get_mystories">
+            <button type="submit">여러 스토리 조회하기</button>
+        </form>
+      </div>
 
 </body>
 
