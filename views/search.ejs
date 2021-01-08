@@ -1,16 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="kor">
 
 <head>
-  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Stylish Portfolio - Start Bootstrap Template</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
   
     
 </head>
 
-<body>
+<body id="page-top">
 
+    
+  <!-- Navigation -->
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper" class="active">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#page-top">Home</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#about">About</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#services">Services</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>    
+    
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h1 class="mb-1">스미스그라운드 카카오 API</h1>
+      <h3 class="mb-5">
+        <em>카카오 API 다써보자</em>
+      </h3>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#LOGIN_API">로그인 API 이동</a>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#SOCIAL_API">소셜 API 이동</a>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#BUSINESS_API">비즈니스 API 이동</a>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#AI_API">인공지능 API 이동</a>
+        <br>
+        <br>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="/oauth/kakao">로그인</a>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="/oauth/logout">로그아웃</a>
+        
+    </div>
+
+    <div class="overlay"></div>
+  </header>
+    
     <div class="tsh" style="padding-top:7.5%">
         <form name="get_story_profile" method="get" action="/search/web">
             Daum 검색 ( 웹문서 검색 )
@@ -53,6 +117,23 @@
         </form>
 
       </div>
+    
+    
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>  
+    
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+    
     
     
 </body>
