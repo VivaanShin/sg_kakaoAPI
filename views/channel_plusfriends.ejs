@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  
+    
+</head>
+
+<body>
+        
+        <h2>
+            요청하신 검색 결과를 보여드리겠습니다.
+    </h2>
+    
+    <div>회원번호 : <%= user_id %></div>
+    <div>채널의 Public ID : <%= plus_friends[0].plus_friend_public_id %></div>
+    <div>채널의 UUID : <%= plus_friends[0].plus_friend_uuid %></div>
+    <div>채널과 사용자 관계 : <%= plus_friends[0].relation %></div>
+    <div>채널 상태 변경 시간 : <%= plus_friends[0].updated_at %></div>
+    
+    <h2>채널과 사용자 관계 설명 </h2>
+    <h3>ADDED : 채널이 추가된 상태 </h3>
+    <h3>BLOCKED : 채널이 차단된 상태 </h3>
+    <h3>NONE : 채널이 추가되거나 차단된 적 없는 상태 </h3>
+    
+    
+</body>
+
+</html>
