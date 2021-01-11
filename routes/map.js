@@ -31,6 +31,31 @@ router.get('/search_category', async function(req, res, next) {
     res.render('map_search_category');
 });
 
+//routes/map/search_by_category
+router.get('/search_by_category', async function(req, res, next) {
+    
+    res.render('map_search_by_category');
+});
+
+//routes/map/display_place_by_address
+router.get('/display_place_by_address', async function(req, res, next) {
+    
+    res.render('map_display_place_by_address');
+});
+
+//routes/map/address_by_location
+router.get('/address_by_location', async function(req, res, next) {
+    
+    res.render('map_address_by_location');
+});
+
+//routes/map/toolbox
+router.get('/toolbox', async function(req, res, next) {
+    
+    res.render('map_toolbox');
+});
+
+
 
 
 module.exports = router;
