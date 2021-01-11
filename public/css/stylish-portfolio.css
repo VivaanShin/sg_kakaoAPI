@@ -18,6 +18,9 @@ body {
   padding: 1.25rem 2.5rem;
 }
 
+.btn-md {
+  padding: 1.25rem 2.5rem;
+}
 .content-section {
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
@@ -105,6 +108,8 @@ h6 {
   padding: 0;
 }
 
+
+
 @media (min-width: 992px) {
   .masthead {
     height: 100vh;
@@ -174,7 +179,7 @@ h6 {
 }
 
 #sidebar-wrapper.active {
-  right: 250px;
+  right: 350px;
   width: 250px;
   transition: all 0.4s ease 0s;
 }
@@ -183,7 +188,7 @@ h6 {
   position: fixed;
   right: 15px;
   top: 15px;
-  width: 50px;
+  width: 150px;
   height: 50px;
   text-align: center;
   color: #fff;

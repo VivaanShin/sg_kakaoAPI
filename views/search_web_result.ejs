@@ -1,37 +1,171 @@
 <!DOCTYPE html>
-<html>
+<html lang="kor">
 
 <head>
-  <title>KakaoLink v2 Demo(Default / Feed) - Kakao JavaScript SDK</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-  
-    
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Stylish Portfolio - Start Bootstrap Template</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="../css/stylish-portfolio.min.css" rel="stylesheet">
+
+
 </head>
 
-<body>
-        <div>검색된 문서 수 : <%= meta.total_count %></div>
-        <div>노출 가능 문서 수 : <%= meta.pageable_count %></div>
-        <div>현재 페이지가 마지막 페이지인가요? : <%= meta.is_end %></div>
-    
-        <h2>
-            요청하신 '<%= query %>' 검색 결과를 보여드리겠습니다.
-    </h2>
-        <% for(var i=0; i<documents.length; i++){ %>
-            <div>문서 글 작성시간 : <%= documents[i].datetime %></div>
-            <div>문서 제목 : <%= documents[i].title %></div>
-            <div>문서 URL : <%= documents[i].url %></div>
-            <div>문서 본문 중 일부 : <%= documents[i].contents %></div>
-            
-            
-            <br>
-            
-    <% } %>
-    
-    
-        
-    
-    
+<body id="page-top">
+
+
+  <!-- Navigation -->
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#page-top">카카오 API NAV</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/search">검색</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/voice">음성</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/vision">비전</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/pose">포즈</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/social">카카오톡 소셜</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/local">로컬</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/map">지도</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/story">스토리</a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container text-center">
+      <h1>스미스그라운드 카카오 API</h1>
+      <h3 class="mb-1">
+        <em>카카오 API 다써보자</em>
+      </h3>
+    </div>
+
+  </header>
+  <section class="content-section-tp bg-primary text-white text-center" id="services">
+    <div class="container-tp">
+      <div class="content-section-tp">
+        <h3 class="text-secondary mb-1">인공지능 API</h3>
+        <h2 >Daum 검색</h2>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+<section class="content-section-table">
+  <h2 style="text-align: center">
+      요청하신 '<%= query %>' 검색 결과를 보여드리겠습니다.
+</h2>
+  <div class="text-control-table-top">
+    <div>검색된 문서 수 : <%= meta.total_count %></div>
+    <div>노출 가능 문서 수 : <%= meta.pageable_count %></div>
+    <div>현재 페이지가 마지막 페이지인가요? : <%= meta.is_end %></div>
+  </div>
+
+
+
+  <% for(var i=0; i<documents.length; i++){ %>
+      <div class="row">
+
+        <div class="col-4">문서 제목 : <%= documents[i].title %></div>
+        <div class="col-4">문서 URL : <%= documents[i].url %></div>
+        <div class="col-4">문서 글 작성시간 : <%= documents[i].datetime %></div>
+
+
+      </div>
+      <div class="row">
+        <div class="col-12">문서 본문 중 일부 : <%= documents[i].contents %></div>
+      </div>
+
+
+
+      <br>
+
+      <% } %>
+</section>
+
+
+
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#!">
+            <i class="icon-social-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#!">
+            <i class="icon-social-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#!">
+            <i class="icon-social-github"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; Your Website 2020</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="../js/stylish-portfolio.min.js"></script>
+
+
+
 </body>
 
 </html>

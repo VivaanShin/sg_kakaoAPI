@@ -20,110 +20,164 @@
 
   <!-- Custom CSS -->
   <link href="css/stylish-portfolio.min.css" rel="stylesheet">
-  
-    
+
+
 </head>
 
 <body id="page-top">
 
-    
+
   <!-- Navigation -->
   <a class="menu-toggle rounded" href="#">
     <i class="fas fa-bars"></i>
   </a>
-  <nav id="sidebar-wrapper" class="active">
+  <nav id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
-        <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a href="#page-top">카카오 API NAV</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#page-top">Home</a>
+        <a href="/">Home</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#about">About</a>
+        <a href="/search">검색</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#services">Services</a>
+        <a href="/voice">음성</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+        <a href="/vision">비전</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#contact">Contact</a>
+        <a href="/pose">포즈</a>
       </li>
+      <li class="sidebar-nav-item">
+        <a href="/social">카카오톡 소셜</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/local">로컬</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/map">지도</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/story">스토리</a>
+      </li>
+
     </ul>
-  </nav>    
-    
+  </nav>
+
   <!-- Header -->
-  <header class="masthead d-flex">
-    <div class="container text-center my-auto">
+  <header class="masthead">
+    <div class="container text-center">
       <h1 class="mb-1">스미스그라운드 카카오 API</h1>
-      <h3 class="mb-5">
+      <h3 class="mb-1">
         <em>카카오 API 다써보자</em>
       </h3>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#LOGIN_API">로그인 API 이동</a>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#SOCIAL_API">소셜 API 이동</a>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#BUSINESS_API">비즈니스 API 이동</a>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#AI_API">인공지능 API 이동</a>
-        <br>
-        <br>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="/oauth/kakao">로그인</a>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="/oauth/logout">로그아웃</a>
-        
     </div>
 
-    <div class="overlay"></div>
   </header>
-    
-    <div class="tsh" style="padding-top:7.5%">
-        <form name="get_story_profile" method="get" action="/search/web">
-            Daum 검색 ( 웹문서 검색 )
-            <button type="submit">이동하기</button>
-        </form>
+
+  <!-- Services -->
+  <section class="content-section bg-primary text-white text-center" id="services">
+    <div class="container">
+      <div class="content-section-heading">
+        <h3 class="text-secondary mb-0">인공지능 API</h3>
+        <h2 class="mb-5">Daum 검색</h2>
+      </div>
+      <div class="row mb-5">
+        <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-screen-smartphone"></i>
+          </span>
+          <h4>
+            <strong>웹문서 검색</strong>
+          </h4>
+          <a class="btn btn-primary btn-xl mt-3" href="/search/web">Search Now!</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-pencil"></i>
+          </span>
+          <h4>
+            <strong>동영상 검색</strong>
+          </h4>
+          <a class="btn btn-primary btn-xl mt-3" href="/search/video">Search Now!</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-like"></i>
+          </span>
+          <h4>
+            <strong>이미지 검색</strong>
+          </h4>
+            <a class="btn btn-primary btn-xl mt-3" href="/search/image">Search Now!</a>
+        </div>
 
       </div>
-    <div class="tsh" style="padding-top:7.5%">
-        <form name="get_story_profile" method="get" action="/search/video">
-            Daum 검색 ( 동영상 검색 )
-            <button type="submit">이동하기</button>
-        </form>
+      <div class="row ">
+        <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-screen-smartphone"></i>
+          </span>
+          <h4>
+            <strong>블로그 검색</strong>
+          </h4>
+          <a class="btn btn-primary btn-xl mt-3" href="/search/blog">Search Now!</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-pencil"></i>
+          </span>
+          <h4>
+            <strong>책 검색</strong>
+          </h4>
+          <a class="btn btn-primary btn-xl mt-3" href="/search/book">Search Now!</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-like"></i>
+          </span>
+          <h4>
+            <strong>카페 검색</strong>
+          </h4>
+            <a class="btn btn-primary btn-xl mt-3" href="/search/cafe">Search Now!</a>
+        </div>
 
       </div>
-    <div class="tsh" style="padding-top:7.5%">
-        <form name="get_story_profile" method="get" action="/search/image">
-            Daum 검색 ( 이미지 검색 )
-            <button type="submit">이동하기</button>
-        </form>
+    </div>
+  </section>
 
-      </div>
-    <div class="tsh" style="padding-top:7.5%">
-        <form name="get_story_profile" method="get" action="/search/blog">
-            Daum 검색 ( 블로그 검색 )
-            <button type="submit">이동하기</button>
-        </form>
 
-      </div>
-    <div class="tsh" style="padding-top:7.5%">
-        <form name="get_story_profile" method="get" action="/search/book">
-            Daum 검색 ( 책 검색 )
-            <button type="submit">이동하기</button>
-        </form>
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#!">
+            <i class="icon-social-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#!">
+            <i class="icon-social-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#!">
+            <i class="icon-social-github"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; Your Website 2020</p>
+    </div>
+  </footer>
 
-      </div>
-    <div class="tsh" style="padding-top:7.5%">
-        <form name="get_story_profile" method="get" action="/search/cafe">
-            Daum 검색 ( 카페 검색 )
-            <button type="submit">이동하기</button>
-        </form>
-
-      </div>
-    
-    
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
     <i class="fas fa-angle-up"></i>
-  </a>  
-    
+  </a>
+
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -133,9 +187,9 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/stylish-portfolio.min.js"></script>
-    
-    
-    
+
+
+
 </body>
 
 </html>
