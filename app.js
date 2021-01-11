@@ -24,6 +24,7 @@ var voiceRouter = require('./routes/voice');
 var localRouter = require('./routes/local');
 var mapRouter = require('./routes/map');
 var naviRouter = require('./routes/navi');
+var payRouter = require('./routes/pay');
 
 const dotenv = require('dotenv').config();
 var passportConfig = require('./passport');
@@ -72,6 +73,7 @@ app.use('/voice', voiceRouter);
 app.use('/local', localRouter);
 app.use('/map', mapRouter);
 app.use('/navi', naviRouter);
+app.use('/pay', payRouter);
 
 
 app.use(passport.initialize());

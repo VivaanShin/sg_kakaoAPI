@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Stylish Portfolio - Start Bootstrap Template</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="../css/stylish-portfolio.min.css" rel="stylesheet">
+
+
+</head>
+
+<body id="page-top">
+
+
+  <!-- Navigation -->
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#page-top">카카오 API NAV</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/search">검색</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/voice">음성</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/vision">비전</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/pose">포즈</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/social">카카오톡 소셜</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/local">로컬</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/map">지도</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="/story">스토리</a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container text-center">
+      <h1 class="mb-1">스미스그라운드 카카오 API</h1>
+      <h3 class="mb-1">
+        <em>카카오 API 다써보자</em>
+      </h3>
+    </div>
+
+  </header>
+  <section class="content-section-tp bg-primary text-white text-center" id="services">
+    <div class="container-tp">
+      <div class="content-section-tp">
+        <h3 class="text-secondary mb-1">비즈니스 API</h3>
+        <h2 class="mb-3">카카오페이</h2>
+      </div>
+    </div>
+  </section>
+
+
+<section class="content-section-mg">
+  <div class="content-section">
+       <h4>결제고유번호 : <%= tid %></h4><br>
+      <h4>요청한 클라이언트(Client)가 모바일 앱일 경우
+카카오톡 결제 페이지 Redirect URL :<br> <%= next_redirect_app_url %></h4><br>
+      <h4>요청한 클라이언트가 모바일 웹일 경우
+카카오톡 결제 페이지 Redirect URL : <br><%= next_redirect_mobile_url %></h4><br>
+      <h4>요청한 클라이언트가 PC 웹일 경우
+카카오톡으로 결제 요청 메시지(TMS)를 보내기 위한 사용자 정보 입력 화면 Redirect URL : <br><%= next_redirect_pc_url %></h4><br>
+      <h4>카카오페이 결제 화면으로 이동하는 Android 앱 스킴(Scheme) : <br><%= android_app_scheme %></h4><br>
+      <h4>카카오페이 결제 화면으로 이동하는 iOS 앱 스킴 : <br><%= ios_app_scheme %></h4><br>
+      <h4>결제 준비 요청 시간 : <br><%= created_at %></h4>
+  </div>
+   
+    
+</section>
+
+
+
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#!">
+            <i class="icon-social-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#!">
+            <i class="icon-social-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#!">
+            <i class="icon-social-github"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; Your Website 2020</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="../js/stylish-portfolio.min.js"></script>
+
+
+
+</body>
+
+</html>
